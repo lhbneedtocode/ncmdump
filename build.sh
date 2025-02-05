@@ -2,7 +2,7 @@
 
 
 cd "$(DIRNAME "$0")"
-rm -rf build
+# rm -rf build
 cd build ||mkdir -p build && cd build
 
 cmake ..
