@@ -1,10 +1,17 @@
 #include "include/cxxopts.hpp"
 #include "include/main.hpp"
 #include "include/version.h"
+#include "include/ncmcrypt.h"
 #include <filesystem>
 namespace fs = std::filesystem;
 void process_file(const fs::path filepath){
 	cout << filepath << endl;
+	if (fs::exists(filepath)){
+		cout << "File exist!"<<endl;
+		NeteaseCrypt ncm(filepath.string());
+		cout <<"NCM . PATH::" << ncm.path()<<endl;
+	}
+	else cout <<"File not exist!"<<endl;
 }
 
 int main(int argc, char** argv){
