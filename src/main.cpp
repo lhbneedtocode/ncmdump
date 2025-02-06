@@ -1,6 +1,11 @@
 #include "include/cxxopts.hpp"
 #include "include/main.hpp"
 #include "include/version.h"
+
+void process_file(std::string filepath){
+	cout << filepath << endl;
+}
+
 int main(int argc, char** argv){
 	
 	cxxopts::Options options("ncmdump");
@@ -40,6 +45,14 @@ int main(int argc, char** argv){
 	if (result.count("version")){
 		cout << "version!!! is !!!" << VERSION_MAJOR<<VERSION_MINOR<<endl;
 	}
+
+	if (result.count("filenames")){
+	       std::vector<std::string> filenames = result["filenames"].as<std::vector<std::string>>();	
+	       for(auto& filename : filenames){
+				process_file(filename);
+			}
+	}
+
 
 	
 }

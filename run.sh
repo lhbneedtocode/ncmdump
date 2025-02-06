@@ -6,6 +6,6 @@ cd build
 
 make
 pwd
-./ncmdump -hv
+./ncmdump -hv file/to/fuckyou
 
 echo "Program executed."
