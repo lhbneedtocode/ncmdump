@@ -3,3 +3,4 @@ build/
 *.hub
 *.out
 **/main
+.vscode/
